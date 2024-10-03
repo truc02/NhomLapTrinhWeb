@@ -32,11 +32,6 @@
     clear:both;
 }
 
-.footer{
-    background-color: #f1f1f1;
-    padding: 10px;
-    text-align: center;
-}
 
 @media (max-width: 600px){
     .column.side, .column.middle{
