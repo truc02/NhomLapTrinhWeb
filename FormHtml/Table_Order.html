@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/FormCss/Tabke_Order.css">
+
+    <title>Danh sách ghế ngồi</title>
+</head>
+
+<body> 
+    <h2 style="text-align: center;">Danh sách ghế ngồi</h2>
+    <table style="width: 60%" border="2" id="seat_table" >
+        <thead>
+            <tr>
+                <th></th> 
+                <script>
+            
+                    const seatCount = 10; 
+                    for (let i = 1; i <= seatCount; i++) {
+                        document.write('<th>' + i + '</th>');
+                    }
+                </script>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+               
+                const rowLabels = ['A', 'B', 'C', 'D','E','F','G','H','I'];
+                for (let row of rowLabels) {
+                    document.write('<tr>');
+                    document.write('<th>' + row + '</th>'); 
+                    for (let i = 1; i <= seatCount; i++) {
+                        document.write('<td class = "not-booked"></td>'); 
+                    }
+                    document.write('</tr>');
+                }
+            </script>
+        </tbody>
+    </table>
+    <table style="width: 30%;" >
+        <tr>
+            <th style="border: none;">Đã đặt</th>  
+            <td class="booked"></td>
+
+        </tr>
+        <tr>
+            <th style="border: none;">Chưa đặt</th>  
+            <td class="not-booked" ></td>
+        </tr>        
+      </table>
+ 
+</body>
+</html>
