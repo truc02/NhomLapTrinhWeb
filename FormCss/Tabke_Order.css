@@ -1,0 +1,20 @@
+table {
+    width: 70%;
+    margin: 0 auto; 
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+
+/* book or not book */
+.booked {
+    background-color: #1f41cb; 
+}
+
+.not-booked {
+    background-color: #7a7776; 
+}
