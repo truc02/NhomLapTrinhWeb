@@ -3,7 +3,7 @@
 
 $servername = "localhost";
 $dbUsername = "root@localhost";
-$dbPassword = "";
+$dbPassword = "";   
 $dbname = "mywebsql";
 
 // Create a connection
@@ -13,7 +13,3 @@ if($conn){
     mysqli_query($conn, "SET name ");
 }
 
-// // Check the connection
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-// }
