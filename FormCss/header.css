@@ -1,0 +1,52 @@
+.header{
+    font-size: 20px;
+    height: 100px;
+    margin-top: 20px;
+}
+  
+.imageLogo img{
+    margin-left: 50px;
+    width: 150px;
+    height: auto;
+}
+
+.menu{
+    margin-top: -100px;
+    text-align: center;
+}
+.btn-muave {
+    background-color: #e68414; 
+    color: rgb(242, 96, 33); 
+    border: none; 
+    position: relative;
+    right: 60px;
+    padding: 20px 40px; 
+    font-size: 15px; 
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-muave:hover {
+    background-color: #ff5500; 
+}
+
+.btn-phim{
+    position: relative;
+    right: 40px;
+}
+.btn-gocdienanh{
+    position: relative;
+    right: 40px;
+}
+.btn-sukien{
+    position: relative;
+    right: 40px;
+}
+.btn-rap{
+    position: relative;
+    right: 40px;
+}
+.btn-log{
+    position: relative;
+    left: 300px;
+}
