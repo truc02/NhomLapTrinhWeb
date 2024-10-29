@@ -18,3 +18,20 @@ th, td {
 .not-booked {
     background-color: #7a7776; 
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+table {
+    margin: 0 auto;
+}
+
+#seat_table {
+    margin-bottom: 20px;
+}

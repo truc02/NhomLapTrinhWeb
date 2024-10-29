@@ -1,8 +1,8 @@
 <?php
-$server = "localhost";
+$server = "localhost:3366";
 $user = "root";
 $password = "";
-$database = "user";
+$database = "mydatabase";
 
 // Kết nối tới cơ sở dữ liệu
 $conn = new mysqli($server, $user, $password, $database);
