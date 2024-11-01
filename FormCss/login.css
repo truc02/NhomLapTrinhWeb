@@ -1,45 +1,106 @@
+/* Form Container */
+.form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    background: white;
+}
+
+/* Form Outline */
 .form-outline {
     position: relative;
     margin-bottom: 1.5rem;
 }
 
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Focus state */
 .form-control:focus {
     border-color: #3b71ca;
     box-shadow: 0 0 0 0.25rem rgba(59, 113, 202, 0.25);
+    outline: none;
 }
 
+/* Error state */
+.form-control.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,...");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Floating Labels */
 .form-label {
     position: absolute;
-    top: 0;
+    top: 0.75rem;
     left: 0.75rem;
-    padding: 0.4rem 0.25rem;
+    padding: 0 0.25rem;
     background: white;
+    color: #6c757d;
+    font-size: 1rem;
     transition: all 0.2s ease-out;
     pointer-events: none;
+    margin-bottom: 0;
 }
 
+/* Label animation */
 .form-control:focus ~ .form-label,
 .form-control:not(:placeholder-shown) ~ .form-label {
     transform: translateY(-1.1rem) scale(0.8);
     background: white;
     padding: 0 0.2rem;
     color: #3b71ca;
+    font-weight: 500;
 }
 
+/* Buttons */
 .btn-block {
     display: block;
     width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
+.btn-primary {
+    background-color: #3b71ca;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #325ea8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(59, 113, 202, 0.2);
+}
+
+/* Social Media Buttons */
 .btn-floating {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     padding: 0;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
+    margin: 0 0.5rem;
+    border: 1px solid #dee2e6;
 }
 
 .btn-floating:hover {
@@ -47,7 +108,71 @@
     box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 }
 
+/* Checkbox */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
 .form-check-input:checked {
     background-color: #3b71ca;
     border-color: #3b71ca;
+}
+
+.form-check-label {
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.divider span {
+    padding: 0 1rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .form-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .btn-floating {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
 }

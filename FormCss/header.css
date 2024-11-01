@@ -1,52 +1,132 @@
-.header{
-    font-size: 20px;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
     height: 100px;
-    margin-top: 20px;
-}
-  
-.imageLogo img{
-    margin-left: 50px;
-    width: 150px;
-    height: auto;
+    font-size: 20px;
+    position: relative;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.menu{
-    margin-top: -100px;
-    text-align: center;
+.imageLogo {
+    flex: 0 0 auto;
 }
-.btn-muave {
-    background-color: #e68414; 
-    color: rgb(242, 96, 33); 
-    border: none; 
-    position: relative;
-    right: 60px;
-    padding: 20px 40px; 
-    font-size: 15px; 
+
+.imageLogo img {
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Khoảng cách giữa các nút */
+}
+
+/* Style chung cho các nút */
+.menu .btn {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
     border-radius: 8px;
-    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Style cho nút mua vé */
+.btn-muave {
+    background-color: #e68414;
+    color: white; /* Đổi màu chữ thành trắng để dễ đọc hơn */
+    padding: 15px 30px;
+    font-weight: bold;
 }
 
 .btn-muave:hover {
-    background-color: #ff5500; 
+    background-color: #ff5500;
+    transform: translateY(-2px);
 }
 
-.btn-phim{
-    position: relative;
-    right: 40px;
+/* Style cho các nút menu thường */
+.btn-phim,
+.btn-gocdienanh,
+.btn-sukien,
+.btn-rap {
+    background-color: transparent;
+    color: #333;
 }
-.btn-gocdienanh{
-    position: relative;
-    right: 40px;
+
+.btn-phim:hover,
+.btn-gocdienanh:hover,
+.btn-sukien:hover,
+.btn-rap:hover {
+    background-color: #f0f0f0;
+    color: #e68414;
 }
-.btn-sukien{
-    position: relative;
-    right: 40px;
+
+/* Style cho nút đăng nhập */
+.btn-log {
+    background-color: #e68414;
+    color: white;
+    padding: 10px 25px;
+    margin-left: auto; /* Đẩy nút login sang phải */
 }
-.btn-rap{
-    position: relative;
-    right: 40px;
+
+.btn-log:hover {
+    background-color: #ff5500;
+    transform: translateY(-2px);
 }
-.btn-log{
-    position: relative;
-    left: 300px;
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .header {
+        padding: 20px 30px;
+    }
+    
+    .menu {
+        gap: 10px;
+    }
+    
+    .menu .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .imageLogo {
+        margin-bottom: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .btn-log {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu .btn {
+        width: 100%;
+        margin: 5px 0;
+    }
 }

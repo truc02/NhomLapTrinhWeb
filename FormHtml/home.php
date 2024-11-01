@@ -128,7 +128,7 @@
         
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../images/slider1.jpg" alt="Phim mới" class="d-block w-100">
+                <img src="../images/doraemon.png" alt="Phim mới" class="d-block w-100">
             </div>
             <div class="carousel-item">
                 <img src="../images/slider2.jpg" alt="Khuyến mãi" class="d-block w-100">
@@ -157,28 +157,47 @@
         <!-- Movie Cards -->
         <div class="row">
             <!-- Movie Card 1 -->
-            <div class="col-md-3 col-sm-6">
-                <div class="card movie-card">
-                    <span class="category-badge">Hành động</span>
-                    <img src="../images/movie1.jpg" class="card-img-top" alt="Tên phim 1">
-                    <div class="card-body">
-                        <h5 class="movie-title">Tên phim 1</h5>
-                        <div class="movie-info mb-2">
-                            <div class="rating">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="far fa-star text-warning"></i>
-                                <span class="ms-2">4.0/5.0</span>
+            <?php include('../admin/connectDB.php');
+            $sql = 'SELECT * FROM film';
+            $result = $conn->query($sql);
+            $films = array();
+            
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                   $films[] = $row;
+                }
+            }
+
+            foreach ($films as $film) {
+                ?>
+                <div class="col-md-3 col-sm-6">
+                    <div class="card movie-card">
+                        <span class="category-badge"><?php echo htmlspecialchars($film['Title']); ?></span>
+                        <img src="../images/<?php echo htmlspecialchars($film['Image']); ?>" class="card-img-top" alt="Tên phim 1">
+                        <div class="card-body">
+                            <h5 class="movie-title"><?php echo htmlspecialchars($film['Name']); ?></h5>
+                            <div class="movie-info mb-2">
+                                <div class="rating">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="ms-2">4.0/5.0</span>
+                                </div>
                             </div>
+                            <button class="btn btn-watch w-100">
+                                <i class="fas fa-play me-2"></i>Mua vé
+                            </button>
                         </div>
-                        <button class="btn btn-watch w-100">
-                            <i class="fas fa-play me-2"></i>Mua vé
-                        </button>
                     </div>
                 </div>
-            </div>
+                <?php
+            }
+        
+            ?>
+
+            
 
             <!-- Thêm các movie card tương tự -->
             
@@ -187,7 +206,16 @@
 
     <!-- Footer -->
     <footer>
-        <!-- Giữ nguyên phần footer của bạn -->
+        <?php
+            $footer_path = 'footer.html';
+            if(file_exists($footer_path)) {
+                include($footer_path);
+            } else {
+                echo '<div class="container">
+                    <p class="text-center">Footer content not found.</p>
+                </div>';
+            }
+        ?>
     </footer>
 
     <!-- Scripts -->
