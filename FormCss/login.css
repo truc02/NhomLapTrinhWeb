@@ -1,0 +1,53 @@
+.form-outline {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control:focus {
+    border-color: #3b71ca;
+    box-shadow: 0 0 0 0.25rem rgba(59, 113, 202, 0.25);
+}
+
+.form-label {
+    position: absolute;
+    top: 0;
+    left: 0.75rem;
+    padding: 0.4rem 0.25rem;
+    background: white;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+}
+
+.form-control:focus ~ .form-label,
+.form-control:not(:placeholder-shown) ~ .form-label {
+    transform: translateY(-1.1rem) scale(0.8);
+    background: white;
+    padding: 0 0.2rem;
+    color: #3b71ca;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-floating {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-floating:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+.form-check-input:checked {
+    background-color: #3b71ca;
+    border-color: #3b71ca;
+}
